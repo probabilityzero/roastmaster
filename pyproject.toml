@@ -1,0 +1,12 @@
+[project]
+name = "roastmaster"
+version = "0.1.0"
+description = "Realtime vision-based roast bot"
+requires-python = ">=3.10"
+
+dependencies = [
+    "vision-agents[getstream,openai]",
+]
+
+[tool.uv]
+package = false
