@@ -113,7 +113,6 @@ coverage.xml
 
 # Environment files
 .env
-.env.*
 .python-version
 
 # Jupyter
