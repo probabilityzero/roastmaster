@@ -1,14 +1,15 @@
+import asyncio
 from playground_agent import roastmaster
 
-def main():
-    agent = roastmaster()
+async def main():
+    agent = await roastmaster()
 
     print("Roast playground")
     print("Press ENTER to start")
     input()
 
     print("Watching. Press Ctrl+C to stop.")
-    agent.run()
+    await agent.run()
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

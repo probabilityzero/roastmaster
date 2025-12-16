@@ -22,17 +22,17 @@ Rules:
 - Assume the user asked to be roasted.
 """
 
-def roastmaster() -> agents.Agent:
+async def roastmaster() -> agents.Agent:
+    edge = getstream.Edge()
+
     agent = agents.Agent(
-        edge=getstream.Edge(), 
+        edge=edge,
         agent_user=User(name="RoastBot", id="agent"),
         instructions=ROAST_INSTRUCTIONS,
-        llm=openai.Realtime(model="gpt-4o-realtime-preview"),
-    )
-
-    agent.configure_audio(
-        allow_interruptions=True,  
-        vad_sensitivity=0.5        
+        llm=openai.Realtime(
+            model="gpt-4o-realtime-preview",
+            fps=1
+        ),
     )
 
     return agent
